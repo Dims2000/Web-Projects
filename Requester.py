@@ -9,15 +9,11 @@ Last Modified: September 11, 2019
 
 import requests
 
-# Asks for a user input
-url = input("Type in the URL of the website: ")
-
-# Checks if the URL entered is valid
 try:
-    # Creates a page request for url
-    page = requests.get(url)
+    # Asks for a url and creates a page request
+    page = requests.get(input("Enter the URL of the page: "))
 
-    # Prints if the
+    # Prints the status of the page
     if page.status_code == 404:
         print("Incorrect: " + page.url)
     else:
